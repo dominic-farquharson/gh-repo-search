@@ -41,7 +41,7 @@ export const SearchReposForm: React.FC = () => {
           Clear
         </SecondaryButton>
       )}
-      <PrimaryButton>Search</PrimaryButton>
+      <PrimaryButton type="submit">Search</PrimaryButton>
       <div>{error && <p className="text-red-500">{error}</p>}</div>
     </form>
   );
