@@ -14,7 +14,8 @@ Basic styling was done using Tailwind, API was built using TRPC, and GH API data
 
 ## Installation
 1. Run `npm i`
-1. Run `npm run dev`
+1. Run `npm run dev` to start app.
+1. Run `npm run test` to run test suite.
 
 ## Technologies Used:
 1. Next.js
