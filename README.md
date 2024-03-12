@@ -24,6 +24,7 @@ Basic styling was done using Tailwind, API was built using TRPC, and GH API data
 1. Octokit
 
 ## Future Improvements
+- Styling!
 - cache user/org check response. 
   - This is fetched each time the user makes a request which is redundant during pagination.
 - Improve Zod validation during repo search
