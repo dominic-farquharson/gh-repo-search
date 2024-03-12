@@ -21,15 +21,21 @@ export const SearchReposForm: React.FC = () => {
       }}
       className="container flex items-center space-x-2"
     >
-      <input
-        defaultValue={query}
-        placeholder="Enter a Github username or organization"
-        className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-        type="text"
-        name="query"
-        required
-        ref={inputRef}
-      />
+      <div className="flex-1 flex-col">
+        <input
+          defaultValue={query}
+          placeholder="Enter a Github username or organization"
+          className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
+          type="text"
+          name="query"
+          required
+          onChange={() => {
+            if (error) setError('')
+          }}
+          ref={inputRef}
+        />
+        <div>{error && <p className="text-red-500">{error}</p>}</div>
+      </div>
       {!!query && (
         <SecondaryButton
           type="button"
@@ -42,7 +48,6 @@ export const SearchReposForm: React.FC = () => {
         </SecondaryButton>
       )}
       <PrimaryButton type="submit">Search</PrimaryButton>
-      <div>{error && <p className="text-red-500">{error}</p>}</div>
     </form>
   );
 };

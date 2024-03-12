@@ -1,29 +1,37 @@
-# Create T3 App
+# GH Repos Search
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+Next.js app that allows you to search for the repositories owned by a user or an organization. Results are paginated and a user can filter and sort the responses. 
 
-## What's next? How do I make an app with this?
+Basic styling was done using Tailwind, API was built using TRPC, and GH API data was fetched using octokit.
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+![image](https://github.com/dominic-farquharson/gh-repo-search/assets/22961764/b7d76315-f920-4bcd-8f37-e3e754382e66)
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## Setup
+1. install latest version of node 18
+1. Run `cp .env.example .env` to create a local .env file
+  1. Create a PAT on GH and add to the .env file
 
-## Learn More
+## Installation
+1. Run `npm i`
+1. Run `npm run dev`
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+## Technologies Used:
+1. Next.js
+1. T3 boilerplate (typescript, tailwind, trpc)
+1. Zod
+1. Octokit
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+## Future Improvements
+- cache user/org check response. 
+  - This is fetched each time the user makes a request which is redundant during pagination.
+- Improve Zod validation during repo search
+- Switch to dedicated form library
+- Switch to FE styling library built on top of Tailwind or another option such as MUI.
+- Improve FE validation and return better error messages to user.
+- Move all string values (error messages, etc) to external constant.
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+## Deployment
+[link](https://gh-repo-search-sepia.vercel.app/)
 
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+*Note: PAT expires in 7 days.*
