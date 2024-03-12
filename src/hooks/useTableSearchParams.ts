@@ -1,7 +1,7 @@
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
 
-interface TableSearchParams {
+export interface TableSearchParams {
   query: string
   sortBy: string
   direction: string
@@ -28,7 +28,7 @@ export const useTableSearchParams = (): TableSearchParams => {
     if (!value) return
     const url = new URL(window.location.href);
     url.searchParams.set(key, value);
-    void router.push(url);
+    void router.push(url.toString());
   }
 
   return {

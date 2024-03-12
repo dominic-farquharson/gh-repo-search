@@ -1,7 +1,7 @@
 import { SecondaryButton } from "../Button/Button";
 import { useTableSearchParams } from "~/hooks/useTableSearchParams";
 
-interface PaginationProps {
+export interface PaginationProps {
   hasNextPage: boolean;
   hasPrevPage: boolean;
   isLoading: boolean;
